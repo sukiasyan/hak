@@ -34,7 +34,7 @@ const Page = () => {
               href="mailto:s.hakob@gmail.com"
               className="text-blue-600 hover:underline"
             >
-              s.hakob[@]gmail.com
+              s.hakob@gmail.com
             </a>
           </p>
           <p>

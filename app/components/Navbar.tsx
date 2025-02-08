@@ -1,71 +1,51 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { NavItem } from "./NavItem";
+import { useState } from "react";
+
+const MENU_LIST = [
+  { text: "Home", href: "/" },
+  { text: "Skills", href: "/skills" },
+  { text: "Portfolio", href: "/portfolio" },
+  { text: "Contacts", href: "/contacts" },
+];
 
 export const Navbar = () => {
-  const router = usePathname();
-
-  const isActiveRoute = (href: string) => {
-    return router === href ? "text-orange-500 bg-white text-xl underline" : "";
-  };
+  const [navActive, setNavActive] = useState<boolean | null>(null);
 
   return (
-    <nav className="p-5 bg-orange-500 text-white text-xl px-20">
-      <ul className="flex">
-        <li>
-          <Link
-            href="/"
-            className={`mr-5 hover:text-orange-100 ${isActiveRoute("/")}`}
-          >
-            Home
+    <header>
+      <nav className="h-[56px] p-5 bg-gray-700 drop-shadow-lg text-white text-xl px-20 flex justify-between items-center">
+        <div>
+          <Link href={"/"}>
+            <h1 className="logo">Yaks Blog</h1>
           </Link>
-        </li>
-        <li>
-          <Link
-            href="/about"
-            className={`mr-5 hover:text-gray-700 ${isActiveRoute("/about")}`}
-          >
-            Page
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/skills"
-            className={`mr-5 hover:text-gray-700 ${isActiveRoute("/skills")}`}
-          >
-            Skills
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/experience"
-            className={`mr-5 hover:text-gray-700 ${isActiveRoute(
-              "/experience"
-            )}`}
-          >
-            Experience
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/portfolio"
-            className={`mr-5 hover:text-gray-700 ${isActiveRoute(
-              "/portfolio"
-            )}`}
-          >
-            Portfolio
-          </Link>
-        </li>
-        <li>
-          <Link
-            href="/contacts"
-            className={`mr-5 hover:text-gray-700 ${isActiveRoute("/contacts")}`}
-          >
-            Contact
-          </Link>
-        </li>
-      </ul>
-    </nav>
+        </div>
+        <div
+          onClick={() => setNavActive(!navActive)}
+          className={`nav__menu-bar`}
+        >
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div className="h-[56px] flex justify-end  items-center bg-gray-600 drop-shadow-lg">
+          {MENU_LIST.map((menu) => (
+            <div
+              onClick={() => {
+                setNavActive(false);
+              }}
+              key={menu.text}
+              className="h-[56px]"
+            >
+              <NavItem {...menu} />
+            </div>
+          ))}
+        </div>
+      </nav>
+    </header>
   );
 };
+
+export default Navbar;
