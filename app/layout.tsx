@@ -20,8 +20,8 @@ export default function RootLayout({
             <Navbar />
           </header>
 
-          <main className="flex-grow">
-            <div className=" justify-between p-5 px-20">{children}</div>
+          <main className="flex-grow pt-[56px]">
+            <div className="justify-between p-5 px-20">{children}</div>
           </main>
 
           <footer className="py-4 flex justify-center">
