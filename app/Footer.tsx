@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AiFillFacebook } from "react-icons/ai";
+import { AiFillFacebook, AiFillYoutube } from "react-icons/ai";
 import { AiFillTwitterSquare } from "react-icons/ai";
 import { AiOutlineGithub } from "react-icons/ai";
 import { AiFillLinkedin } from "react-icons/ai";
@@ -11,24 +11,46 @@ export const Footer = () => {
         <li>
           <Link
             href="https://www.facebook.com/yaks10"
+            target="_blank"
             className="mr-10 hover:text-customGreen "
           >
             <AiFillFacebook />
           </Link>
         </li>
         <li>
-          <Link href="/about" className="mr-10 hover:text-customGreen ">
+          <Link
+            href="https://www.youtube.com/@HakSukiasyan/videos"
+            target="_blank"
+            className="mr-10 hover:text-customGreen "
+          >
             <AiFillTwitterSquare />
           </Link>
         </li>
         <li>
-          <Link href="/about" className="mr-10 hover:text-customGreen ">
+          <Link
+            href="https://github.com/sukiasyan"
+            target="_blank"
+            className="mr-10 hover:text-customGreen "
+          >
             <AiOutlineGithub />
           </Link>
         </li>
         <li>
-          <Link href="/about" className="mr-10 hover:text-customGreen ">
+          <Link
+            href="https://www.linkedin.com/in/hakob-sukiasyan"
+            target="_blank"
+            className="mr-10 hover:text-customGreen "
+          >
             <AiFillLinkedin />
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="https://www.youtube.com/@HakSukiasyan/videos"
+            target="_blank"
+            className="mr-10 hover:text-customGreen "
+          >
+            <AiFillYoutube />
           </Link>
         </li>
       </ul>
